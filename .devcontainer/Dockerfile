@@ -6,10 +6,14 @@ LABEL org.opencontainers.image.description="NSQLite Dev Container"
 LABEL org.opencontainers.image.licenses=MIT
 
 ENV DEBIAN_FRONTEND="noninteractive"
-ENV GOBIN="/usr/local/gobin"
+
 ENV CGO_ENABLED=1
-ENV PATH="$PATH:/usr/local/go/bin:/usr/local/gobin"
+ENV GOBIN="/usr/local/gobin"
 RUN mkdir -p /usr/local/gobin
+
+ENV PATH="$PATH:/usr/local/go/bin"
+ENV PATH="$PATH:/usr/local/gobin"
+ENV PATH="$PATH:/usr/local/zig"
 
 # Copy the golang binaries
 COPY --from=golang /usr/local/go /usr/local/go
@@ -27,9 +31,9 @@ RUN go install github.com/go-task/task/v3/cmd/task@v3.40.1 && \
 # TODO: Add support for ARM and other architectures
 RUN wget --no-verbose https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz && \
     tar -xf ./zig-linux-x86_64-0.13.0.tar.xz && \
-    mv ./zig-linux-x86_64-0.13.0/zig /usr/local/bin/zig && \
+    mv ./zig-linux-x86_64-0.13.0 /usr/local/zig && \
     rm -rf ./zig-linux-x86_64-* && \
-    chmod +x /usr/local/bin/zig
+    chmod +x /usr/local/zig/zig
 
 # Add the startup script on every bash session
 COPY ./startup.sh /usr/local/bin/startup.sh
