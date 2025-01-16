@@ -17,8 +17,8 @@ container.
 
 ## Software included
 
-You can find the list of software and settings included in the container by
-looking at the following files:
+This container is based on `Debian` and you can find the list of software and
+settings included in the container by looking at the following files:
 
 - `.devcontainer/devcontainer.json`
 - `.devcontainer/Dockerfile`
