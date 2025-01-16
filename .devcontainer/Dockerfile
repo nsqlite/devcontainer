@@ -12,7 +12,7 @@ COPY --from=golang /usr/local/go /usr/local/go
 
 # Install system dependencies
 RUN apt-get update && \
-    apt-get install -y gcc wget git sqlite3 && \
+    apt-get install -y gcc wget xz-utils git zip unzip p7zip-full sqlite3 && \
     rm -rf /var/lib/apt/lists/*
 
 # Install dependencies with go install
