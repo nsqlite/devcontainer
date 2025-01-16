@@ -15,6 +15,14 @@ container that can be used to develop any piece of software related to NSQLite.
 It must be kept up to date with the latest version of the software used in the
 container.
 
+## Software included
+
+You can find the list of software and settings included in the container by
+looking at the following files:
+
+- `.devcontainer/devcontainer.json`
+- `.devcontainer/Dockerfile`
+
 ## About Dev Containers
 
 - https://containers.dev
