@@ -1,0 +1,2 @@
+# devcontainer
+NSQLite Dev Container
