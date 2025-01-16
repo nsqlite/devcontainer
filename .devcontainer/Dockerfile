@@ -1,6 +1,10 @@
 FROM golang:1.23.4-bookworm AS golang
 FROM debian:bookworm
 
+LABEL org.opencontainers.image.source=https://github.com/nsqlite/nsqlitedc
+LABEL org.opencontainers.image.description="NSQLite Dev Container"
+LABEL org.opencontainers.image.licenses=MIT
+
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV GOBIN="/usr/local/gobin"
 ENV CGO_ENABLED=1
