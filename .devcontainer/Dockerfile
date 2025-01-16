@@ -23,10 +23,9 @@ RUN go install github.com/go-task/task/v3/cmd/task@v3.40.1 && \
 # TODO: Add support for ARM and other architectures
 RUN wget --no-verbose https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz && \
     tar -xf ./zig-linux-x86_64-0.13.0.tar.xz && \
-    mv ./zig-linux-x86_64-0.13.0/zig /usr/local/zig && \
-    rm -rf ./zig-linux-x86_64-0.13.0 && \
-    rm -rf ./zig-linux-x86_64-0.13.0.tar.xz && \
-    chmod +x /usr/local/zig/zig
+    mv ./zig-linux-x86_64-0.13.0/zig /usr/local/bin/zig && \
+    rm -rf ./zig-linux-x86_64-* && \
+    chmod +x /usr/local/bin/zig
 
 # Add the startup script on every bash session
 COPY ./startup.sh /usr/local/bin/startup.sh
