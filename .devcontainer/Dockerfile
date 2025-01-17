@@ -35,7 +35,6 @@ RUN wget --no-verbose https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.
     rm -rf ./zig-linux-x86_64-* && \
     chmod +x /usr/local/zig/zig
 
-
 # Default git config
 # https://github.com/golangci/golangci-lint/issues/4033
 RUN git config --global --add safe.directory '*'
