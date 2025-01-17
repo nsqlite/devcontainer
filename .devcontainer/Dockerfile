@@ -20,7 +20,7 @@ COPY --from=golang /usr/local/go /usr/local/go
 
 # Install system dependencies
 RUN apt-get update && \
-    apt-get install -y gcc ccache wget curl xz-utils git zip unzip p7zip-full net-tools sqlite3 && \
+    apt-get install -y gcc wget curl xz-utils git zip unzip p7zip-full net-tools sqlite3 && \
     rm -rf /var/lib/apt/lists/*
 
 # Install dependencies with go install
@@ -34,6 +34,11 @@ RUN wget --no-verbose https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.
     mv ./zig-linux-x86_64-0.13.0 /usr/local/zig && \
     rm -rf ./zig-linux-x86_64-* && \
     chmod +x /usr/local/zig/zig
+
+
+# Default git config
+# https://github.com/golangci/golangci-lint/issues/4033
+RUN git config --global --add safe.directory '*'
 
 # Add the startup script on every bash session
 COPY ./startup.sh /usr/local/bin/startup.sh
