@@ -11,6 +11,7 @@
 		"vscode": {
 			"extensions": [
 				"golang.go",
+				"ms-vscode.cpptools",
 				"mhutchie.git-graph",
 				"Compile-TomaszKasperczyk.copy-to-llm"
 			],
@@ -40,6 +41,8 @@
 					".yaml",
 					".json",
 					".go",
+					".c",
+					".h",
 					".sql",
 					".md"
 				]
