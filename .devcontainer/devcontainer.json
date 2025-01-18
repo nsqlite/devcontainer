@@ -11,6 +11,7 @@
 		"vscode": {
 			"extensions": [
 				"golang.go",
+				"denoland.vscode-deno",
 				"ms-vscode.cpptools",
 				"mhutchie.git-graph",
 				"Compile-TomaszKasperczyk.copy-to-llm"
@@ -19,17 +20,23 @@
 				"editor.formatOnSave": true,
 				"editor.foldingStrategy": "indentation",
 				"files.eol": "\n",
-				"[json]": {
-					"editor.defaultFormatter": "vscode.json-language-features"
-				},
-				"[jsonc]": {
-					"editor.defaultFormatter": "vscode.json-language-features"
-				},
-				"[markdown]": {
-					"editor.defaultFormatter": "vscode.markdown-language-features"
-				},
 				"[go]": {
 					"editor.defaultFormatter": "golang.go"
+				},
+				"[typescript]": {
+					"editor.defaultFormatter": "denoland.vscode-deno"
+				},
+				"[javascript]": {
+					"editor.defaultFormatter": "denoland.vscode-deno"
+				},
+				"[markdown]": {
+					"editor.defaultFormatter": "denoland.vscode-deno"
+				},
+				"[json]": {
+					"editor.defaultFormatter": "denoland.vscode-deno"
+				},
+				"[jsonc]": {
+					"editor.defaultFormatter": "denoland.vscode-deno"
 				},
 				"go.lintTool": "golangci-lint",
 				"go.lintFlags": [
@@ -44,7 +51,9 @@
 					".c",
 					".h",
 					".sql",
-					".md"
+					".md",
+					".ts",
+					".js"
 				]
 			}
 		}
