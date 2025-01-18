@@ -17,9 +17,28 @@
 				"Compile-TomaszKasperczyk.copy-to-llm"
 			],
 			"settings": {
+				"deno.enable": true,
 				"editor.formatOnSave": true,
 				"editor.foldingStrategy": "indentation",
 				"files.eol": "\n",
+				"go.lintTool": "golangci-lint",
+				"go.lintFlags": [
+					"--fast"
+				],
+				"copyToLLM.extensions": [
+					".sh",
+					".mod",
+					".yaml",
+					".json",
+					".go",
+					".c",
+					".h",
+					".sql",
+					".md",
+					".ts",
+					".js"
+				],
+				// Explicitly set the default formatter for each language
 				"[go]": {
 					"editor.defaultFormatter": "golang.go"
 				},
@@ -37,24 +56,7 @@
 				},
 				"[jsonc]": {
 					"editor.defaultFormatter": "denoland.vscode-deno"
-				},
-				"go.lintTool": "golangci-lint",
-				"go.lintFlags": [
-					"--fast"
-				],
-				"copyToLLM.extensions": [
-					".sh",
-					".mod",
-					".yaml",
-					".json",
-					".go",
-					".c",
-					".h",
-					".sql",
-					".md",
-					".ts",
-					".js"
-				]
+				}
 			}
 		}
 	}
