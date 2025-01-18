@@ -1,4 +1,4 @@
-FROM golang:1.23.4-bookworm AS golang
+FROM golang:1.23.5-bookworm AS golang
 FROM debian:bookworm
 
 LABEL org.opencontainers.image.source=https://github.com/nsqlite/nsqlitedc
