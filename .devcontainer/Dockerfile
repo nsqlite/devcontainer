@@ -1,4 +1,5 @@
 FROM golang:1.23.5-bookworm AS golang
+FROM denoland/deno:debian-2.1.6 AS deno
 FROM debian:bookworm
 
 LABEL org.opencontainers.image.source=https://github.com/nsqlite/nsqlitedc
@@ -17,6 +18,9 @@ ENV PATH="$PATH:/usr/local/zig"
 
 # Copy the golang binaries
 COPY --from=golang /usr/local/go /usr/local/go
+
+# Copy the deno binaries
+COPY --from=deno /usr/bin/deno /usr/local/bin/deno
 
 # Install system dependencies
 RUN apt-get update && \
