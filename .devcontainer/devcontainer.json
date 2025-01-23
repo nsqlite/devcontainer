@@ -8,9 +8,14 @@
 		"vscode": {
 			"extensions": [
 				"golang.go",
+				"vadimcn.vscode-lldb",
+				"rust-lang.rust-analyzer",
+				"tamasfe.even-better-toml",
+				"serayuzgur.crates",
 				"denoland.vscode-deno",
 				"ms-vscode.cpptools",
 				"mhutchie.git-graph",
+				"mutantdino.resourcemonitor",
 				"Compile-TomaszKasperczyk.copy-to-llm"
 			],
 			"settings": {
@@ -38,6 +43,9 @@
 				// Explicitly set the default formatter for each language
 				"[go]": {
 					"editor.defaultFormatter": "golang.go"
+				},
+				"[rust]": {
+					"editor.defaultFormatter": "rust-lang.rust-analyzer"
 				},
 				"[typescript]": {
 					"editor.defaultFormatter": "denoland.vscode-deno"

@@ -1,4 +1,5 @@
 FROM golang:1.23.5-bookworm AS golang
+FROM rust:1.81.0-bookworm AS rust
 FROM denoland/deno:debian-2.1.6 AS deno
 FROM debian:bookworm
 
@@ -13,11 +14,15 @@ ENV GOBIN="/usr/local/gobin"
 RUN mkdir -p /usr/local/gobin
 
 ENV PATH="$PATH:/usr/local/go/bin"
+ENV PATH="$PATH:/usr/local/cargo/bin"
 ENV PATH="$PATH:/usr/local/gobin"
 ENV PATH="$PATH:/usr/local/zig"
 
 # Copy the golang binaries
 COPY --from=golang /usr/local/go /usr/local/go
+
+# Copy the rust binaries
+COPY --from=rust /usr/local/cargo /usr/local/cargo
 
 # Copy the deno binaries
 COPY --from=deno /usr/bin/deno /usr/local/bin/deno
