@@ -22,7 +22,7 @@ COPY --from=deno /usr/bin/deno /usr/local/bin/deno
 
 # Install system dependencies
 RUN apt-get update && \
-    apt-get install -y
+    apt-get install -y \
         gcc wget curl iputils-ping xz-utils git \
         zip unzip p7zip-full net-tools sqlite3 && \
     rm -rf /var/lib/apt/lists/*
