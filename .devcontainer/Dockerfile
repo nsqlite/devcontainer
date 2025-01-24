@@ -42,7 +42,7 @@ RUN wget --no-verbose https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.
 
 # Install rust
 ENV PATH="$PATH:/usr/local/cargo/bin"
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -q -y
 
 # Install dependencies with cargo install
 RUN cargo install --locked cargo-zigbuild
