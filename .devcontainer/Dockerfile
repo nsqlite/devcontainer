@@ -44,6 +44,9 @@ RUN wget --no-verbose https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.
 ENV PATH="$PATH:/usr/local/cargo/bin"
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
+# Install dependencies with cargo install
+RUN cargo install --locked cargo-zigbuild
+
 # Default git config
 # https://github.com/golangci/golangci-lint/issues/4033
 RUN git config --global --add safe.directory '*'
