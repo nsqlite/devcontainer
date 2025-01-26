@@ -29,7 +29,8 @@ RUN apt-get update && \
 
 # Install dependencies with go install
 RUN go install github.com/go-task/task/v3/cmd/task@v3.40.1 && \
-    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.63.4
+    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.63.4 && \
+    go install github.com/codesenberg/bombardier@v1.2.6
 
 # Install zig lang
 # TODO: Add support for ARM and other architectures
