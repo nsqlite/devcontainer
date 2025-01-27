@@ -19,7 +19,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GH_ACCESS_TOKEN }} # Repo action variable
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push the image
         uses: devcontainers/ci@v0.3
